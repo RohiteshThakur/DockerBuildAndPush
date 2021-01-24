@@ -1,0 +1,22 @@
+Building a Docker image.
+------------------------
+1. Write relevent Dockerfile in the same folder where main Go program executable is or we can copy the executable to this folder as well.
+    # cd Docker/imagetobuild1
+    
+2. Build/Create image locally:
+    # docker image build -t <name of docker image to be created> .
+  e.g docker image build -t gowebapp .
+    # docker images -a
+
+3. Run:
+    # docker run --name mywebapp -p 8000:8000 -it gowebapp       (In this case, my app was listening on port 8000)
+    # docker ps -a      (Container shouldnt have exited)
+
+4. When happy with the results, time to push image to Docker repo. So create an account but login via command line: 
+    # docker login --username=rothakur --password-stdin          (Enter password when prompted) 
+    # docker images
+    # docker tag <image id> <docker login name>/<containername>:v1
+  e.g docker tag b25cd54a0223 rothakur/gowebapp:v1
+
+    # docker push rothakur/gowebapp
+
