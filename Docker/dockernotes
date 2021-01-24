@@ -12,7 +12,7 @@ Building a Docker image.
     # docker run --name mywebapp -p 8000:8000 -it gowebapp       (In this case, my app was listening on port 8000)
     # docker ps -a      (Container shouldnt have exited)
 
-4. When happy with the results, time to push image to Docker repo. So create an account but login via command line: 
+4. When happy with the results, time to push image to Docker Hub registry. So create an account online but login via command line: 
     # docker login --username=rothakur --password-stdin          (Enter password when prompted) 
     # docker images
     # docker tag <image id> <docker login name>/<containername>:v1
